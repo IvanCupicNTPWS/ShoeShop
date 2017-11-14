@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ShoeShop</title>
+    <link href="Style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--<script type="text/javascript" language="javascript">
+        function GetProductById() {
+            var id = document.getElementById("txtProductID").value;
+            //WebServicesDemo.ProductService.GetProductById(id, GetProductByIdSuccessCallback);
+             
+
+            document.getElementById("txtNaziv").value = id;
+            //ShoeShop.ProductService.GetShoeById(id, GetProductByIdSuccessCallback);
+            //ShoeShop.ProductService.GetProductById(id, GetProductByIdSuccessCallback);
+        }
+    </script>--%>
+</head>
+<body>
+    
+    <header>
+
+        <h1 id="Label1">Shoe<span style="color: #78d4f7">Shop</span></h1>
+
+        
+            
+        
+
+    </header>
+    <aside>
+
+            <nav>
+                <ul>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Pocetna.aspx" CssClass="lista" Width="200px">Početna</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Proizvodi.aspx" CssClass="lista" Width="200px">Proizvodi</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Onama.aspx" CssClass="lista" Width="200px">O nama</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Kontakt.aspx" CssClass="lista" Width="200px">Kontakt</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlManage" runat="server" NavigateUrl="~/App_Admin/Manage.aspx" CssClass="lista" Width="200px">Upravljanje</asp:HyperLink></li>
+                </ul>
+            </nav>
+
+    </aside>
+    <section>
+        <form id="form1" runat="server">
+            <asp:LoginName ID="LoginName1" runat="server" FormatString="Korisnik: {0}" Font-Names="helvetica" ForeColor="White"/>
+            <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Names="helvetica" ForeColor="White" />
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/App_User/Password_Change.aspx" Font-Names="helvetica" ForeColor="White" CausesValidation="False">Promijeni lozinku</asp:LinkButton>
+
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </form>
+    </section>
+    <footer>
+        <p>Copyright &copy; Ivan Čupić 2017</p>
+    </footer>
+    
+</body>
+</html>
